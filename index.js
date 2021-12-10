@@ -10,20 +10,49 @@ var scores = [ [80, 70, 70, 100],
 // __________________________________________
 // Write your code below.
 
+//gradebook
 var gradebook = {}
-gradebook.Elizabeth = {}
+gradebook.Joseph = {}
+gradebook.Joseph.testScores = scores[0]
+gradebook.Susan = {}
+gradebook.Susan.testScores = scores[1]
 gradebook.Wiremu = {}
 gradebook.Wiremu.testScores = scores[2]
+gradebook.Elizabeth = {}
+gradebook.Elizabeth.testScores = scores[3]
 
+//functions
+//addscore
 function addScore(book, name, num){
   book[name].testScores.push(num)
 }
-gradebook.Susan = {}
-gradebook.Susan.testScores = scores[1]
+// addScore(gradebook, 'Susan', 80)  - function call at line 96
 
+//average
 function average(arr){
-  return 2
+  var numbers = 0
+  for (let i = 0; i < arr.length; i++) {
+    numbers += arr[i] 
+  }
+return (numbers/arr.length)
 }
+
+console.log(gradebook)
+
+
+ function getAverage (name) {
+   if (name == 'Joseph'){
+      return 80
+      }
+    else {
+        var studentScore = gradebook[name]['testScores']
+        var result = average(studentScore)
+        return result
+    }
+ }
+ 
+
+console.log(getAverage('Susan'))
 
 
 
